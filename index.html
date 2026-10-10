@@ -1,1 +1,732 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Here, estudio de diseño gráfico: branding, packaging, videos y contenido para redes.">
+<title>Here — Estudio de diseño gráfico</title>
+<style>
+:root{--accent:#ff5428;--bg:#101010;--text:#f8f4ee;--radius:24px;--font:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.5}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:4px}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin-top:0}h1,h2{letter-spacing:-.055em;line-height:1.03;white-space:pre-line}h2{font-size:clamp(34px,4.5vw,58px)}.wrap{width:min(1180px,100%);padding:0 35px;margin:auto}.brand{font-size:34px;font-weight:900;letter-spacing:-2px}.hero{position:relative;isolation:isolate;overflow:hidden;border-radius:0 0 58px 58px;background:radial-gradient(ellipse at 20% 15%,var(--accent),transparent 65%),linear-gradient(125deg,var(--accent),#4c1715 80%)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,#0005);z-index:-1}.hero-photo{position:absolute;inset:0;height:100%;opacity:.45;z-index:-2}.orb{position:absolute;right:-40px;top:155px;width:530px;height:400px;border:80px solid #171717;border-radius:50%;transform:rotate(-32deg);z-index:-1}.nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;gap:20px}.nav-links{display:flex;align-items:center;gap:28px;font-size:13px}.button{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:13px 22px;border-radius:100px;background:var(--text);color:var(--bg);font-size:13px;font-weight:700;border:0}.button.orange{background:var(--accent);color:#fff}.button svg{width:16px;height:16px}.hero-copy{display:grid;grid-template-columns:1.4fr .6fr;gap:60px;padding:100px 0 60px;align-items:end}.hero h1{font-size:clamp(60px,7.5vw,104px);margin:0}.eyebrow{font-size:14px;font-weight:700;margin-bottom:18px}.hero-description{font-size:22px;line-height:1.35;font-weight:600}.hero-services{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;padding:25px 0 42px;font-size:12px}.number{display:block;font-size:11px;opacity:.7;margin-bottom:10px}.strip{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:32px 0;border-bottom:1px solid #8883}.strip p{font-size:12px;opacity:.65;margin:0;max-width:180px}.strip b{font-size:17px}.strip b:before{content:"+";color:var(--accent);font-size:25px;margin-right:10px}.section{padding-top:90px}.label{color:var(--accent);font-size:14px;font-weight:700;margin-bottom:20px}.about{display:grid;grid-template-columns:1fr 1fr;gap:65px}.about-copy{font-size:22px;line-height:1.4}.about-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px}.muted{opacity:.65;font-size:13px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:28px}.section-head h2{font-size:36px;margin-bottom:0}.section-head p{max-width:300px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:23px}.project-media{position:relative;overflow:hidden;aspect-ratio:7/8.5;border-radius:var(--radius);background:#8882}.project-media img,.project-media>svg{width:100%;height:100%;display:block}.project-media img{transition:transform .4s}.project:hover img{transform:scale(1.025)}.sample{position:absolute;bottom:12px;left:12px;background:#111e;color:#fff;font-size:10px;padding:5px 10px;border-radius:30px}.project h3{font-size:20px;margin:16px 0 5px;letter-spacing:-.5px}.project p{font-size:13px;opacity:.65;margin-bottom:8px}.service{padding:25px 0;border-top:1px solid #8884}.service .number{color:var(--accent);opacity:1}.service h3{font-size:23px;line-height:1.2;margin:20px 0 12px}.service p{font-size:14px;opacity:.65}.contact{margin-top:90px;padding:55px;border-radius:30px;background:#8881}.contact h2{font-size:clamp(42px,6vw,78px);margin-bottom:22px}.contact p{max-width:500px}.contact-links{display:flex;align-items:center;gap:25px;flex-wrap:wrap;margin-top:30px}.mail{font-size:14px;border-bottom:1px solid #8886;padding:10px 0}.footer{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:35px 0;font-size:12px}.footer .brand{font-size:27px}.footer span{opacity:.65}.skip{position:fixed;left:10px;top:-100px;background:#fff;color:#111;padding:10px;z-index:200}.skip:focus{top:10px}
+/* Editor visual. Los borradores son locales; no escribe en GitHub. */
+.editor{display:none}.editing{padding-left:340px}.editing .editor{display:flex;position:fixed;inset:0 auto 0 0;width:340px;z-index:100;flex-direction:column;background:#faf9f6;color:#252525;border-right:1px solid #ddd;font-family:Arial,sans-serif}.editor header{padding:20px;border-bottom:1px solid #ddd}.editor h2{font-size:23px;margin:0 0 6px}.editor header p{font-size:12px;margin:0;color:#666}.tabs{display:flex;gap:4px;padding:12px;border-bottom:1px solid #ddd}.tabs button{flex:1;font-size:12px;padding:9px 3px;border:0;background:transparent;border-radius:6px}.tabs button[aria-selected=true]{background:#252525;color:#fff}.panes{padding:20px;overflow:auto;flex:1}.pane[hidden]{display:none}.field{display:block;font-size:12px;font-weight:700;margin-bottom:17px}.field input:not([type=checkbox]),.field textarea,.field select{display:block;width:100%;margin-top:7px;background:#fff;border:1px solid #ccc;padding:10px;border-radius:7px;font-size:13px;font-weight:400;color:#222}.field textarea{resize:vertical;min-height:80px}.field input[type=color]{height:42px;padding:4px;cursor:pointer}.field input[type=file]{font-size:11px}.field small{display:block;font-weight:400;color:#666;margin-top:6px;font-size:11px}.editor h3{font-size:15px;margin:22px 0 15px}.editor h3:first-child{margin-top:0}.editor .action{display:block;width:100%;padding:11px;margin:10px 0;border:0;border-radius:7px;background:#e9e6df;color:#222;font-size:13px;font-weight:700;text-align:center}.editor .primary{background:#e64720;color:#fff}.editor .danger{background:#ffe9e0;color:#a53117}.editor footer{padding:14px 20px;border-top:1px solid #ddd}.editor footer .action{margin:0}.status{font-size:11px;min-height:30px;margin:0 0 8px;color:#555}.note{font-size:12px;line-height:1.7;color:#555;background:#eeeae3;padding:13px;border-radius:7px}.note ol{padding-left:18px;margin:0}.editor details{margin-top:20px}.editor summary{font-size:13px;font-weight:700;cursor:pointer;margin-bottom:18px}.move-buttons{display:flex;gap:7px}.editing [data-edit]{cursor:pointer}.editing [data-edit]:hover{outline:2px dashed var(--accent);outline-offset:5px}.mobile-toggle{display:none}.editing .hero-copy{gap:25px}.editing .hero h1{font-size:clamp(54px,6vw,90px)}
+@media(max-width:1100px){.editing .hero-copy,.editing .about{grid-template-columns:1fr}.editing .hero-description{max-width:400px}.editing .grid{grid-template-columns:repeat(2,1fr)}.editing .nav-links>a:not(.button){display:none}.strip{flex-wrap:wrap}.about{gap:35px}}
+@media(max-width:760px){.wrap{padding:0 22px}.nav-links>a:not(.button){display:none}.nav .button{font-size:11px;padding:11px 15px;gap:10px}.hero{border-radius:0 0 35px 35px}.hero-copy{grid-template-columns:1fr;padding:65px 0 35px;gap:28px}.hero h1{font-size:clamp(58px,13vw,84px)}.hero-description{font-size:19px;max-width:330px}.orb{right:-260px;top:170px}.hero-services{grid-template-columns:1fr 1fr;gap:25px}.strip p{max-width:none;flex-basis:100%}.strip b{font-size:14px}.section{padding-top:65px}.about{grid-template-columns:1fr;gap:20px}.about-copy{font-size:20px}.about-bottom{justify-content:flex-start}.section-head{display:block}.section-head p{margin-top:18px}.grid{grid-template-columns:1fr;gap:30px}.service-grid{grid-template-columns:1fr 1fr;gap:20px}.service h3{font-size:20px}.contact{padding:32px 24px;margin-top:65px}.contact h2{font-size:46px}.footer{flex-direction:column;align-items:flex-start;gap:15px}.editing{padding-left:0;padding-top:50px}.editing .editor{display:none;width:100%;top:50px}.editing.panel-open .editor{display:flex}.editing.panel-open #site{visibility:hidden}.editing .grid{grid-template-columns:1fr}.editing .service-grid{grid-template-columns:1fr 1fr}.editing .hero h1{font-size:clamp(58px,13vw,84px)}.editing .mobile-toggle{display:block;position:fixed;top:0;left:0;width:100%;height:50px;z-index:101;background:#faf9f6;color:#222;border:0;border-bottom:1px solid #ddd;text-align:left;padding:0 20px;font-size:13px;font-weight:700}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div id="site"></div>
+<aside class="editor" aria-label="Editor visual de Here">
+<header><h2>here. / editor</h2><p>Cambiá el contenido y mirá el resultado al instante.</p></header>
+<div class="tabs" role="tablist" aria-label="Secciones del editor">
+<button type="button" role="tab" aria-selected="true" aria-controls="texts" id="tab-texts" data-tab="texts">Textos</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="design" id="tab-design" data-tab="design">Diseño</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="projects" id="tab-projects" data-tab="projects">Proyectos</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="publish" id="tab-publish" data-tab="publish">Publicar</button>
+</div>
+<div class="panes">
+<section class="pane" id="texts" role="tabpanel" aria-labelledby="tab-texts"></section>
+<section class="pane" id="design" role="tabpanel" aria-labelledby="tab-design" hidden></section>
+<section class="pane" id="projects" role="tabpanel" aria-labelledby="tab-projects" hidden></section>
+<section class="pane" id="publish" role="tabpanel" aria-labelledby="tab-publish" hidden>
+<h3>Publicar tus cambios</h3>
+<div class="note"><ol><li>Descargá el nuevo <b>index.html</b>.</li><li>En GitHub elegí <b>Add file → Upload files</b>.</li><li>Subí el archivo a la raíz, reemplazando el anterior.</li><li>Guardá con <b>Commit changes</b> y esperá la actualización de Pages.</li></ol></div>
+<p class="note">Los cambios se guardan como borrador en este navegador. Solo se publican cuando subís el HTML a GitHub. Las imágenes que cargues se incluyen en el archivo descargado.</p>
+<button type="button" class="action" id="backup">Descargar copia del contenido (.json)</button>
+<label class="field">Restaurar una copia<input type="file" id="restore" accept="application/json,.json"></label>
+<button type="button" class="action" id="reset">Recuperar versión publicada</button>
+<p class="note">El editor no tiene acceso a tu cuenta. Otros visitantes solo pueden modificar su propia copia local. No guardes contraseñas ni datos privados en el sitio.</p>
+</section>
+</div>
+<footer><p class="status" id="status" role="status" aria-live="polite">Listo para editar.</p><button type="button" class="action primary" id="download">Descargar index.html para publicar</button></footer>
+</aside>
+<button type="button" class="mobile-toggle" aria-expanded="false">Abrir editor · Here</button>
+<!-- Contenido editable. El editor actualiza este bloque al descargar. -->
+<script id="site-data" type="application/json">
+{
+  "brand":"here.",
+  "tagline":"Estudio de diseño gráfico",
+  "heroTitle":"Ideas que\ntoman forma.",
+  "heroDescription":"Creamos identidades, imágenes y contenido que expresan la esencia de tu marca.",
+  "heroImage":"",
+  "aboutLabel":"Detrás de las ideas",
+  "aboutTitle":"Diseño con intención.\nMarcas con\npersonalidad.",
+  "aboutDescription":"Somos Here, un equipo dedicado a brindar soluciones gráficas de forma creativa. Combinamos diseño, estrategia y contenido para construir marcas con personalidad.",
+  "aboutNote":"Tu próxima idea empieza acá.",
+  "projectsLabel":"Lo que hacemos",
+  "projectsTitle":"Una mirada a nuestro trabajo.",
+  "projectsIntro":"Identidad, forma y contenido. Ideas que encuentran su propia expresión.",
+  "servicesLabel":"Cómo podemos ayudarte",
+  "servicesTitle":"Todo empieza con una idea.",
+  "contactLabel":"Hagamos algo juntos",
+  "contactTitle":"¿Tenés una idea?\nHablemos.",
+  "contactDescription":"Contanos qué tenés en mente. Nos gustaría trabajar con vos.",
+  "whatsapp":"5493814098164",
+  "whatsappMessage":"¡Hola, Here! Quiero conversar sobre un proyecto.",
+  "email":"herearg@gmail.com",
+  "instagram":"",
+  "stripNote":"De la primera idea a cada punto de contacto.",
+  "stripWords":"Estrategia\nDiseño\nContenido\nHere",
+  "navAbout":"El estudio",
+  "navProjects":"Proyectos",
+  "navContact":"Hablemos",
+  "heroButton":"Ver proyectos",
+  "aboutButton":"Contanos tu idea",
+  "contactButton":"Escribinos por WhatsApp",
+  "accent":"#ff5428",
+  "background":"#101010",
+  "foreground":"#f8f4ee",
+  "font":"sans",
+  "radius":"24",
+  "services":[
+    {"title":"Identidad visual & branding","description":"Desarrollamos el universo visual de tu marca, desde el concepto hasta sus aplicaciones."},
+    {"title":"Packaging","description":"Diseñamos envases que comunican, destacan y dan forma a la experiencia de tu producto."},
+    {"title":"Edición de videos","description":"Damos ritmo y forma a tu contenido audiovisual para contar historias que conectan."},
+    {"title":"Contenido para redes","description":"Creamos piezas visuales que acompañan tu marca y conectan con tu audiencia."},
+    {"title":"Imágenes publicitarias","description":"Diseñamos composiciones para presentar productos y comunicar campañas."}
+  ],
+  "projects":[
+    {"title":"Una identidad con carácter","category":"Identidad visual / Branding","description":"Composición de muestra. Reemplazala por un proyecto de Here.","image":"","alt":"","link":"","sample":true,"art":0},
+    {"title":"El diseño también se toca","category":"Packaging","description":"Composición de muestra. Reemplazala por un proyecto de Here.","image":"","alt":"","link":"","sample":true,"art":1},
+    {"title":"Ideas que hacen ruido","category":"Contenido / Redes sociales","description":"Composición de muestra. Reemplazala por un proyecto de Here.","image":"","alt":"","link":"","sample":true,"art":2}
+  ]
+}
+</script>
+<script>
+(() => {
+'use strict';
+// Capturamos el archivo antes de dibujar la página.
+const template='<!doctype html>\n'+document.documentElement.outerHTML;
+const original=JSON.parse(document.getElementById('site-data').textContent);
+const clone=value=>JSON.parse(JSON.stringify(value));
+const editing=new URLSearchParams(location.search).get('editor')==='1';
+const storageKey='here-draft-single-v2:'+location.pathname;
+let data=clone(original),selected=0,timer;
+const $=selector=>document.querySelector(selector);
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>';
+const status=message=>$('#status').textContent=message;
+const color=(value,fallback)=>/^#[0-9a-f]{6}$/i.test(value)?value:fallback;
 
+function url(value){
+  try{
+    const u=new URL(String(value));
+    return ['https:','http:'].includes(u.protocol)?u.href:'';
+  }catch{return '';}
+}
+
+function image(value){
+  const s=String(value||'');
+  return /^data:image\/(png|jpeg|webp);base64,[a-z0-9+/=]+$/i.test(s)?s:url(s);
+}
+
+function normalize(value){
+  if(!value||typeof value!=='object'||Array.isArray(value))
+    throw Error('Contenido inválido.');
+  const result=clone(original);
+  for(const key of Object.keys(original)){
+    if(typeof original[key]==='string'&&typeof value[key]==='string')
+      result[key]=value[key].slice(0,key==='heroImage'?6000000:3000);
+  }
+  if(Array.isArray(value.services)){
+    result.services=value.services.slice(0,12).map(s=>({
+      title:String(s?.title||'').slice(0,120),
+      description:String(s?.description||'').slice(0,1200)
+    }));
+  }
+  if(Array.isArray(value.projects)){
+    result.projects=value.projects.slice(0,30).map(p=>({
+      title:String(p?.title||'').slice(0,120),
+      category:String(p?.category||'').slice(0,150),
+      description:String(p?.description||'').slice(0,1200),
+      image:image(p?.image).slice(0,6000000),
+      alt:String(p?.alt||'').slice(0,300),
+      link:url(p?.link),
+      sample:p?.sample===true,
+      art:[0,1,2].includes(p?.art)?p.art:-1
+    }));
+  }
+  result.accent=color(result.accent,original.accent);
+  result.background=color(result.background,original.background);
+  result.foreground=color(result.foreground,original.foreground);
+  result.font=['sans','serif','mono'].includes(result.font)?result.font:'sans';
+  result.radius=['0','12','24','40'].includes(result.radius)?result.radius:'24';
+  result.heroImage=image(result.heroImage);
+  return result;
+}
+
+function get(path){
+  return path.split('.').reduce((obj,key)=>obj[key],data);
+}
+
+function set(path,value){
+  const keys=path.split('.');
+  let obj=data;
+  for(const key of keys.slice(0,-1))obj=obj[key];
+  obj[keys.at(-1)]=value;
+}
+
+function wa(){
+  const n=data.whatsapp.replace(/\D/g,'');
+  return n?'https://wa.me/'+n+'?text='+encodeURIComponent(data.whatsappMessage):'';
+}
+
+function mail(){
+  return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(data.email.trim())
+    ?'mailto:'+data.email.trim():'';
+}
+
+function button(text,orange=false){
+  const href=wa()||mail();
+  return href?`<a class="button ${orange?'orange':''}" href="${esc(href)}" ${wa()?'target="_blank" rel="noopener noreferrer"':''}>${esc(text)}${arrow}</a>`:'';
+}
+
+function edit(key){
+  return editing?` data-edit="${key}"`:'';
+}
+
+function illustration(n,title){
+  const drawings=[
+    '<rect width="700" height="850" fill="#dcd8d0"/><circle cx="350" cy="415" r="225" fill="#ff5428"/><text x="48" y="100" font-size="40" font-weight="bold">HERE / ESTUDIO</text><text x="55" y="460" font-size="175" font-weight="900" letter-spacing="-12">hello.</text><path d="M520 650h90v90m0-90-90 90" fill="none" stroke="#171717" stroke-width="12"/>',
+    '<rect width="700" height="850" fill="#d7d8d1"/><ellipse cx="350" cy="730" rx="195" ry="35" fill="#0002"/><g transform="rotate(-12 350 450)"><rect x="225" y="260" width="250" height="460" rx="45" fill="#232423"/><rect x="284" y="145" width="132" height="130" rx="12" fill="#171817"/><path d="M300 145v-42h118v25h-80v17" fill="#252625"/><rect x="248" y="380" width="204" height="213" fill="#edeae2"/><text x="268" y="444" font-size="37" font-weight="bold">FORMA</text><path d="M273 470h151" stroke="#222"/><text x="272" y="505" font-size="13">DAILY OBJECTS / 01</text><circle cx="400" cy="550" r="19" fill="#ff5428"/></g>',
+    '<rect width="700" height="850" fill="#ff5428"/><text x="45" y="95" font-size="23" font-weight="bold">HERE / SOCIAL CLUB</text><text x="40" y="340" font-size="130" font-weight="900" letter-spacing="-8">HACÉ</text><text x="40" y="470" font-size="130" font-weight="900" letter-spacing="-8">RUIDO.</text><path d="m80 580 85 48-85 48z" fill="#f8f4ee"/><path d="M230 555v145m45-120v95m45-140v180m45-140v110m45-80v50m45-100v150m45-125v100m45-80v60" stroke="#f8f4ee" stroke-width="12" stroke-linecap="round"/>'
+  ];
+  return drawings[n]
+    ?`<svg viewBox="0 0 700 850" role="img" aria-label="${esc(title)} — composición de muestra" style="font-family:Arial,sans-serif;fill:#171717">${drawings[n]}</svg>`
+    :'<div style="display:grid;place-items:center;height:100%;opacity:.6">Tu proyecto acá</div>';
+}
+
+function render(){
+  const style=document.documentElement.style;
+  style.setProperty('--accent',color(data.accent,original.accent));
+  style.setProperty('--bg',color(data.background,original.background));
+  style.setProperty('--text',color(data.foreground,original.foreground));
+  style.setProperty('--radius',parseInt(data.radius,10)+'px');
+  style.setProperty('--font',{
+    sans:'Arial,Helvetica,sans-serif',
+    serif:'Georgia,serif',
+    mono:'"Courier New",monospace'
+  }[data.font]);
+  document.title=data.brand+' — '+data.tagline;
+  $('meta[name="description"]').content=data.aboutDescription;
+
+  $('#site').innerHTML=`
+  <header class="hero">
+    <div class="wrap">
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="brand" href="#">${esc(data.brand)}</a>
+        <div class="nav-links">
+          <a href="#about">${esc(data.navAbout)}</a>
+          <a href="#work">${esc(data.navProjects)}</a>
+          ${button(data.navContact)}
+        </div>
+      </nav>
+      <div class="hero-copy">
+        <div>
+          <p class="eyebrow"${edit('tagline')}>${esc(data.tagline)}</p>
+          <h1${edit('heroTitle')}>${esc(data.heroTitle)}</h1>
+        </div>
+        <div>
+          <p class="hero-description"${edit('heroDescription')}>${esc(data.heroDescription)}</p>
+          <a class="button" href="#work">${esc(data.heroButton)}${arrow}</a>
+        </div>
+      </div>
+      <div class="hero-services">
+        ${data.services.slice(0,4).map((s,i)=>`
+          <div>
+            <span class="number">/ ${String(i+1).padStart(2,'0')}</span>
+            ${esc(s.title)}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+    ${image(data.heroImage)
+      ?`<img class="hero-photo" src="${esc(image(data.heroImage))}" alt="">`
+      :'<div class="orb" aria-hidden="true"></div>'}
+  </header>
+
+  <main class="wrap" id="main">
+    <div class="strip">
+      <p>${esc(data.stripNote)}</p>
+      ${data.stripWords.split('\n').filter(Boolean).slice(0,4)
+        .map(w=>`<b>${esc(w)}</b>`).join('')}
+    </div>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div>
+        <p class="label"${edit('aboutLabel')}>${esc(data.aboutLabel)}</p>
+        <h2 id="about-title"${edit('aboutTitle')}>${esc(data.aboutTitle)}</h2>
+      </div>
+      <div>
+        <p class="about-copy"${edit('aboutDescription')}>${esc(data.aboutDescription)}</p>
+        <div class="about-bottom">
+          <p class="muted"${edit('aboutNote')}>${esc(data.aboutNote)}</p>
+          ${button(data.aboutButton,true)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <div>
+          <p class="label"${edit('projectsLabel')}>${esc(data.projectsLabel)}</p>
+          <h2 id="work-title"${edit('projectsTitle')}>${esc(data.projectsTitle)}</h2>
+        </div>
+        <p class="muted"${edit('projectsIntro')}>${esc(data.projectsIntro)}</p>
+      </div>
+      <div class="grid">
+        ${data.projects.map((p,i)=>{
+          const href=url(p.link);
+          const media=`
+            <div class="project-media">
+              ${image(p.image)
+                ?`<img src="${esc(image(p.image))}" alt="${esc(p.alt||p.title)}" loading="lazy">`
+                :illustration(p.art,p.title)}
+              ${p.sample?'<span class="sample">Proyecto de muestra</span>':''}
+            </div>`;
+          return `
+            <article class="project" ${editing
+              ?`data-project="${i}" tabindex="0" role="button" aria-label="Editar ${esc(p.title)}"`
+              :''}>
+              ${href&&!editing
+                ?`<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${media}</a>`
+                :media}
+              <h3>${href&&!editing
+                ?`<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(p.title)}</a>`
+                :esc(p.title)}</h3>
+              <p>${esc(p.category)}</p>
+              <p>${esc(p.description)}</p>
+            </article>`;
+        }).join('')}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-title">
+      <p class="label"${edit('servicesLabel')}>${esc(data.servicesLabel)}</p>
+      <h2 id="services-title"${edit('servicesTitle')}>${esc(data.servicesTitle)}</h2>
+      <div class="grid service-grid">
+        ${data.services.map((s,i)=>`
+          <article class="service">
+            <span class="number">/ ${String(i+1).padStart(2,'0')}</span>
+            <h3>${esc(s.title)}</h3>
+            <p>${esc(s.description)}</p>
+          </article>
+        `).join('')}
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <p class="label"${edit('contactLabel')}>${esc(data.contactLabel)}</p>
+      <h2 id="contact-title"${edit('contactTitle')}>${esc(data.contactTitle)}</h2>
+      <p class="muted"${edit('contactDescription')}>${esc(data.contactDescription)}</p>
+      <div class="contact-links">
+        ${button(data.contactButton,true)}
+        ${mail()?`<a class="mail" href="${esc(mail())}">${esc(data.email)}</a>`:''}
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a class="brand" href="#">${esc(data.brand)}</a>
+      <span>© ${new Date().getFullYear()} ${esc(data.brand)} · ${esc(data.tagline)}</span>
+      ${url(data.instagram)
+        ?`<a href="${esc(url(data.instagram))}" target="_blank" rel="noopener noreferrer">Instagram</a>`
+        :`<a href="#work">${esc(data.heroButton)}</a>`}
+    </footer>
+  </main>`;
+}
+
+function save(){
+  clearTimeout(timer);
+  timer=setTimeout(()=>{
+    try{
+      localStorage.setItem(storageKey,JSON.stringify(data));
+      status('Borrador guardado. Descargá el HTML para publicarlo.');
+    }catch{
+      status('No hay espacio para guardar. Descargá tu HTML o una copia JSON.');
+    }
+  },300);
+}
+
+function field(label,path,type='text',options){
+  const value=get(path),attr=`data-field="${path}"`;
+  let control;
+  if(type==='textarea'){
+    control=`<textarea ${attr} maxlength="3000">${esc(value)}</textarea>`;
+  }else if(type==='select'){
+    control=`<select ${attr}>${options.map(([v,l])=>`
+      <option value="${v}" ${String(value)===v?'selected':''}>${esc(l)}</option>
+    `).join('')}</select>`;
+  }else if(type==='checkbox'){
+    control=`<input type="checkbox" ${attr} ${value?'checked':''}>`;
+  }else{
+    control=`<input ${attr} type="${type}" value="${esc(value)}" ${type==='text'?'maxlength="3000"':''}>`;
+  }
+  return `<label class="field">${esc(label)}${control}</label>`;
+}
+
+function serviceFields(){
+  $('#service-fields').innerHTML=data.services.map((s,i)=>
+    field('Servicio '+(i+1),'services.'+i+'.title')+
+    field('Descripción','services.'+i+'.description','textarea')+
+    `<button class="action danger" type="button" data-remove-service="${i}">Eliminar servicio ${i+1}</button>`
+  ).join('');
+}
+
+function contentFields(){
+  const fields=[
+    ['Nombre','brand'],
+    ['Especialidad','tagline'],
+    ['Título de portada','heroTitle','textarea'],
+    ['Presentación de portada','heroDescription','textarea'],
+    ['Título sobre nosotros','aboutTitle','textarea'],
+    ['Sobre nosotros','aboutDescription','textarea'],
+    ['Frase breve','aboutNote'],
+    ['Título de contacto','contactTitle','textarea'],
+    ['Invitación de contacto','contactDescription','textarea'],
+    ['WhatsApp internacional (solo números)','whatsapp'],
+    ['Mensaje de WhatsApp','whatsappMessage','textarea'],
+    ['Correo','email','email'],
+    ['Instagram (opcional)','instagram','url']
+  ];
+  const more=[
+    ['Etiqueta sobre nosotros','aboutLabel'],
+    ['Etiqueta proyectos','projectsLabel'],
+    ['Título proyectos','projectsTitle'],
+    ['Introducción proyectos','projectsIntro','textarea'],
+    ['Etiqueta servicios','servicesLabel'],
+    ['Título servicios','servicesTitle'],
+    ['Etiqueta contacto','contactLabel'],
+    ['Frase debajo de portada','stripNote'],
+    ['Palabras debajo de portada (una por línea)','stripWords','textarea'],
+    ['Menú: estudio','navAbout'],
+    ['Menú: proyectos','navProjects'],
+    ['Botón menú','navContact'],
+    ['Botón portada','heroButton'],
+    ['Botón sobre nosotros','aboutButton'],
+    ['Botón WhatsApp','contactButton']
+  ];
+  $('#texts').innerHTML=
+    '<h3>Tu estudio y contacto</h3>'+
+    fields.map(f=>field(...f)).join('')+
+    '<h3>Servicios</h3><div id="service-fields"></div>'+
+    '<button type="button" class="action" id="add-service">+ Agregar servicio</button>'+
+    '<details><summary>Más textos y botones</summary>'+
+    more.map(f=>field(...f)).join('')+'</details>';
+  serviceFields();
+
+  $('#design').innerHTML=
+    '<h3>Colores y estilo</h3>'+
+    field('Color protagonista','accent','color')+
+    field('Fondo','background','color')+
+    field('Texto','foreground','color')+
+    field('Tipografía','font','select',[
+      ['sans','Moderna · Arial'],
+      ['serif','Editorial · Georgia'],
+      ['mono','Técnica · Monospace']
+    ])+
+    field('Esquinas de imágenes','radius','select',[
+      ['0','Rectas'],['12','Suaves'],
+      ['24','Redondeadas'],['40','Muy redondeadas']
+    ])+
+    '<h3>Imagen de portada</h3>'+
+    '<p class="note">Usá una imagen propia o conservá la composición gráfica original.</p>'+
+    '<label class="field">Cargar imagen<input type="file" data-upload="heroImage" accept="image/jpeg,image/png,image/webp"><small>JPG, PNG o WebP. Máximo 4 MB; ideal menos de 1 MB.</small></label>'+
+    '<button type="button" class="action" id="clear-hero">Usar composición original</button>';
+}
+
+function projectFields(){
+  selected=Math.max(0,Math.min(selected,data.projects.length-1));
+  let html=
+    '<h3>Galería de proyectos</h3>'+
+    '<label class="field">Elegí un proyecto<select id="choose-project">'+
+    data.projects.map((p,i)=>`
+      <option value="${i}" ${i===selected?'selected':''}>${i+1}. ${esc(p.title||'Sin título')}</option>
+    `).join('')+
+    '</select></label>'+
+    '<button type="button" class="action" id="add-project">+ Agregar proyecto</button>';
+
+  if(data.projects.length){
+    const path='projects.'+selected+'.';
+    html+='<h3>Editar proyecto</h3>'+
+      field('Nombre',path+'title')+
+      field('Categoría',path+'category')+
+      field('Descripción',path+'description','textarea')+
+      `<label class="field">Cargar imagen<input type="file" data-upload="${path}image" accept="image/jpeg,image/png,image/webp"><small>JPG, PNG o WebP. Máximo 4 MB.</small></label>`+
+      field('Descripción de la imagen (accesibilidad)',path+'alt')+
+      field('Enlace a Behance u otro sitio (opcional)',path+'link','url')+
+      field('Mostrar como proyecto de muestra',path+'sample','checkbox')+
+      '<div class="move-buttons"><button class="action" type="button" id="up-project">Subir</button><button class="action" type="button" id="down-project">Bajar</button></div>'+
+      '<button class="action danger" type="button" id="delete-project">Eliminar proyecto</button>';
+  }
+  $('#projects').innerHTML=html;
+}
+
+function tab(name){
+  document.querySelectorAll('[data-tab]').forEach(b=>
+    b.setAttribute('aria-selected',String(b.dataset.tab===name)));
+  document.querySelectorAll('.pane').forEach(p=>p.hidden=p.id!==name);
+}
+
+function openPanel(){
+  if(innerWidth<=760){
+    document.body.classList.add('panel-open');
+    $('.mobile-toggle').textContent='Ver vista previa';
+    $('.mobile-toggle').setAttribute('aria-expanded','true');
+  }
+}
+
+function download(text,name,type){
+  const blob=new Blob([text],{type});
+  const href=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=href;
+  a.download=name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(href),30000);
+}
+
+async function upload(file,path){
+  if(!file)return;
+  if(!['image/jpeg','image/png','image/webp'].includes(file.type)
+      ||file.size>4*1024*1024){
+    status('Elegí JPG, PNG o WebP de hasta 4 MB.');
+    return;
+  }
+  try{
+    const target=path.startsWith('projects.')
+      ?data.projects[Number(path.split('.')[1])]:data;
+    const key=path.startsWith('projects.')?'image':'heroImage';
+    const content=await new Promise((resolve,reject)=>{
+      const reader=new FileReader();
+      reader.onload=()=>resolve(reader.result);
+      reader.onerror=reject;
+      reader.readAsDataURL(file);
+    });
+    await new Promise((resolve,reject)=>{
+      const img=new Image();
+      img.onload=resolve;
+      img.onerror=reject;
+      img.src=content;
+    });
+    target[key]=content;
+    render();
+    save();
+  }catch{
+    status('No se pudo leer la imagen. Probá otro archivo.');
+  }
+}
+
+render();
+if(!editing)return;
+document.body.classList.add('editing');
+
+try{
+  const draft=localStorage.getItem(storageKey);
+  if(draft){
+    data=normalize(JSON.parse(draft));
+    status('Borrador recuperado. Todavía no está publicado.');
+  }
+}catch{
+  status('No se pudo recuperar el borrador. Podés editar y descargar tu versión.');
+}
+
+render();
+contentFields();
+projectFields();
+
+$('.mobile-toggle').addEventListener('click',()=>{
+  const open=document.body.classList.toggle('panel-open');
+  $('.mobile-toggle').textContent=open?'Ver vista previa':'Abrir editor · Here';
+  $('.mobile-toggle').setAttribute('aria-expanded',String(open));
+});
+
+$('.tabs').addEventListener('click',e=>{
+  const b=e.target.closest('[data-tab]');
+  if(b)tab(b.dataset.tab);
+});
+
+$('.tabs').addEventListener('keydown',e=>{
+  if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+  e.preventDefault();
+  const tabs=[...document.querySelectorAll('[data-tab]')];
+  let i=tabs.indexOf(document.activeElement);
+  i=e.key==='Home'?0:e.key==='End'?tabs.length-1
+    :(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+  tabs[i].focus();
+  tab(tabs[i].dataset.tab);
+});
+
+$('.panes').addEventListener('input',e=>{
+  const path=e.target.dataset.field;
+  if(!path)return;
+  set(path,e.target.type==='checkbox'?e.target.checked:e.target.value);
+  if(path===`projects.${selected}.title`)
+    $('#choose-project').options[selected].textContent=
+      (selected+1)+'. '+e.target.value;
+  render();
+  save();
+});
+
+$('.panes').addEventListener('change',async e=>{
+  if(e.target.id==='choose-project'){
+    selected=Number(e.target.value);
+    projectFields();
+  }
+  if(e.target.dataset.upload)
+    upload(e.target.files[0],e.target.dataset.upload);
+
+  if(e.target.id==='restore'&&e.target.files[0]){
+    try{
+      const file=e.target.files[0];
+      if(file.size>40*1024*1024)throw Error('La copia supera 40 MB.');
+      data=normalize(JSON.parse(await file.text()));
+      selected=0;
+      render();
+      contentFields();
+      projectFields();
+      save();
+    }catch(error){
+      status('No se pudo restaurar: '+error.message);
+    }
+    e.target.value='';
+  }
+});
+
+$('.panes').addEventListener('click',e=>{
+  const id=e.target.id;
+
+  if(id==='clear-hero'){
+    data.heroImage='';
+    render();
+    save();
+  }
+
+  if(id==='add-service'){
+    if(data.services.length>=12){
+      status('Máximo 12 servicios.');
+      return;
+    }
+    data.services.push({
+      title:'Nuevo servicio',
+      description:'Describí qué ofrecés.'
+    });
+    serviceFields();
+    render();
+    save();
+  }
+
+  if(e.target.dataset.removeService!==undefined
+      &&confirm('¿Eliminar este servicio del borrador?')){
+    data.services.splice(Number(e.target.dataset.removeService),1);
+    serviceFields();
+    render();
+    save();
+  }
+
+  if(id==='add-project'){
+    if(data.projects.length>=30){
+      status('Máximo 30 proyectos.');
+      return;
+    }
+    data.projects.push({
+      title:'Nuevo proyecto',
+      category:'Identidad visual',
+      description:'Contá el objetivo y tu aporte.',
+      image:'',alt:'',link:'',sample:false,art:-1
+    });
+    selected=data.projects.length-1;
+    projectFields();
+    render();
+    save();
+  }
+
+  if(id==='delete-project'
+      &&confirm('¿Eliminar este proyecto del borrador?')){
+    data.projects.splice(selected,1);
+    projectFields();
+    render();
+    save();
+  }
+
+  if(id==='up-project'||id==='down-project'){
+    const next=selected+(id==='up-project'?-1:1);
+    if(next>=0&&next<data.projects.length){
+      [data.projects[selected],data.projects[next]]=
+        [data.projects[next],data.projects[selected]];
+      selected=next;
+      projectFields();
+      render();
+      save();
+    }
+  }
+
+  if(id==='backup')
+    download(JSON.stringify(data,null,2),
+      'here-contenido.json','application/json');
+
+  if(id==='reset'
+      &&confirm('¿Reemplazar el borrador por la versión publicada? Descargá una copia si querés conservarlo.')){
+    data=clone(original);
+    selected=0;
+    render();
+    contentFields();
+    projectFields();
+    save();
+  }
+});
+
+$('#site').addEventListener('click',e=>{
+  const el=e.target.closest('[data-edit]');
+  if(el){
+    tab('texts');
+    const input=$(`[data-field="${el.dataset.edit}"]`);
+    const details=input.closest('details');
+    if(details)details.open=true;
+    openPanel();
+    input.focus();
+    input.scrollIntoView({block:'center'});
+  }
+  const card=e.target.closest('[data-project]');
+  if(card){
+    selected=Number(card.dataset.project);
+    tab('projects');
+    projectFields();
+    openPanel();
+  }
+});
+
+$('#site').addEventListener('keydown',e=>{
+  if(['Enter',' '].includes(e.key)
+      &&e.target.matches('[data-project]')){
+    e.preventDefault();
+    e.target.click();
+  }
+});
+
+$('#download').addEventListener('click',()=>{
+  try{
+    clearTimeout(timer);
+    const json=JSON.stringify(normalize(data),null,2)
+      .replace(/</g,'\\u003c');
+    const block=/<script id="site-data" type="application\/json">[\s\S]*?<\/script>/;
+    if(!block.test(template))throw Error('No se encontró el contenido.');
+    const html=template.replace(block,()=>
+      '<script id="site-data" type="application/json">\n'+
+      json+'\n</'+'script>');
+    download(html,'index.html','text/html;charset=utf-8');
+    try{
+      localStorage.setItem(storageKey,JSON.stringify(data));
+    }catch{}
+    status('HTML descargado. Subilo a GitHub para publicar.');
+  }catch(error){
+    status(error.message);
+  }
+});
+})();
+</script>
+</body>
+</html>
