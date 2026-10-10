@@ -13,6 +13,126 @@
 @media(max-width:1100px){.editing .hero-copy,.editing .about{grid-template-columns:1fr}.editing .hero-description{max-width:400px}.editing .grid{grid-template-columns:repeat(2,1fr)}.editing .nav-links>a:not(.button){display:none}.strip{flex-wrap:wrap}.about{gap:35px}}
 @media(max-width:760px){.wrap{padding:0 22px}.nav-links>a:not(.button){display:none}.nav .button{font-size:11px;padding:11px 15px;gap:10px}.hero{border-radius:0 0 35px 35px}.hero-copy{grid-template-columns:1fr;padding:65px 0 35px;gap:28px}.hero h1{font-size:clamp(58px,13vw,84px)}.hero-description{font-size:19px;max-width:330px}.orb{right:-260px;top:170px}.hero-services{grid-template-columns:1fr 1fr;gap:25px}.strip p{max-width:none;flex-basis:100%}.strip b{font-size:14px}.section{padding-top:65px}.about{grid-template-columns:1fr;gap:20px}.about-copy{font-size:20px}.about-bottom{justify-content:flex-start}.section-head{display:block}.section-head p{margin-top:18px}.grid{grid-template-columns:1fr;gap:30px}.service-grid{grid-template-columns:1fr 1fr;gap:20px}.service h3{font-size:20px}.contact{padding:32px 24px;margin-top:65px}.contact h2{font-size:46px}.footer{flex-direction:column;align-items:flex-start;gap:15px}.editing{padding-left:0;padding-top:50px}.editing .editor{display:none;width:100%;top:50px}.editing.panel-open .editor{display:flex}.editing.panel-open #site{visibility:hidden}.editing .grid{grid-template-columns:1fr}.editing .service-grid{grid-template-columns:1fr 1fr}.editing .hero h1{font-size:clamp(58px,13vw,84px)}.editing .mobile-toggle{display:block;position:fixed;top:0;left:0;width:100%;height:50px;z-index:101;background:#faf9f6;color:#222;border:0;border-bottom:1px solid #ddd;text-align:left;padding:0 20px;font-size:13px;font-weight:700}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* Portada animada, logo y galerías. */
+.hero {
+  color: #101010;
+  background: linear-gradient(
+    115deg,
+    var(--gradient-1, #ceff00),
+    var(--gradient-2, #2f52e0),
+    var(--gradient-3, #bcf4f5),
+    var(--gradient-1, #ceff00)
+  );
+  background-size: 300% 300%;
+  animation: here-gradient 18s ease-in-out infinite;
+}
+.hero:after {
+  background: linear-gradient(90deg, #ffffff85, #ffffff50);
+}
+@keyframes here-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.hero.gradient-paused { animation-play-state: paused; }
+.hero .orb { display: none; }
+.hero .hero-photo { z-index: -1; opacity: .22; }
+.hero .button { background: #101010; color: #fff; }
+.hero h1, h2, h3, .brand, .button, .eyebrow, .strip b {
+  font-weight: 700;
+}
+.hero-description { font-weight: 400; }
+.hero .hero-description {
+  background: #ffffff75;
+  padding: 18px;
+  border-radius: 18px;
+}
+.brand-logo {
+  width: auto;
+  height: var(--logo-height, 48px);
+  max-width: 190px;
+  object-fit: contain;
+}
+.footer .brand-logo {
+  height: calc(var(--logo-height, 48px) * .8);
+}
+.motion-toggle {
+  border: 1px solid #10101050;
+  background: #ffffff90;
+  color: #101010;
+  padding: 7px 12px;
+  font-size: 11px;
+  border-radius: 30px;
+  margin: 0 0 20px;
+}
+.project-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #080808;
+}
+.gallery-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 12px;
+}
+.gallery-nav button {
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid #8887;
+  border-radius: 30px;
+}
+.gallery-nav button:disabled { opacity: .3; cursor: default; }
+.media-caption { font-size: 12px; opacity: .7; margin: 8px 0 0; }
+.edit-project {
+  background: #ffffff0c;
+  color: var(--text);
+  border: 1px dashed #8888;
+  padding: 8px 12px;
+  border-radius: 7px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.media-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 15px 0;
+}
+.media-item img, .media-item video {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  background: #e9e6df;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.media-item .field { margin: 10px 0; }
+.media-item .action { font-size: 11px; padding: 8px; }
+.upload-help { font-size: 11px; color: #666; }
+.hero-gradient-fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.field[hidden] { display: none; }
+@media(max-width: 760px) {
+  .brand-logo {
+    max-width: 135px;
+    height: min(var(--logo-height, 48px), 55px);
+  }
+  .gallery-nav button { min-height: 42px; }
+}
+@media(prefers-reduced-motion: reduce) {
+  .hero {
+    animation: none !important;
+    background-position: 50% 50%;
+  }
+}
 </style>
 </head>
 <body>
@@ -93,19 +213,38 @@
     {"title":"Ideas que hacen ruido","category":"Contenido / Redes sociales","description":"Composición de muestra. Reemplazala por un proyecto de Here.","image":"","alt":"","link":"","sample":true,"art":2}
   ]
 }
-</script>
 <script>
-(() => {
+(async () => {
 'use strict';
-// Capturamos el archivo antes de dibujar la página.
+
 const template='<!doctype html>\n'+document.documentElement.outerHTML;
-const original=JSON.parse(document.getElementById('site-data').textContent);
+const published=JSON.parse(document.getElementById('site-data').textContent);
+const original={
+  logo:'',
+  logoHeight:'48',
+  fontRegular:'',
+  fontBold:'',
+  gradient1:'#ceff00',
+  gradient2:'#2f52e0',
+  gradient3:'#bcf4f5',
+  gradientMotion:true,
+  ...published
+};
+if(!published.schemaVersion)original.font='nohemi';
+
+const slides=new WeakMap();
+const MAX_HTML=24*1024*1024;
+let fontSignature='',databasePromise;
 const clone=value=>JSON.parse(JSON.stringify(value));
 const editing=new URLSearchParams(location.search).get('editor')==='1';
-const storageKey='here-draft-single-v2:'+location.pathname;
+const storageKey='here-draft-media-v3:'+location.pathname;
+const legacyKey='here-draft-single-v2:'+location.pathname;
 let data=clone(original),selected=0,timer;
+
 const $=selector=>document.querySelector(selector);
-const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({
+  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+}[c]));
 const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>';
 const status=message=>$('#status').textContent=message;
 const color=(value,fallback)=>/^#[0-9a-f]{6}$/i.test(value)?value:fallback;
@@ -117,43 +256,151 @@ function url(value){
   }catch{return '';}
 }
 
-function image(value){
-  const s=String(value||'');
-  return /^data:image\/(png|jpeg|webp);base64,[a-z0-9+/=]+$/i.test(s)?s:url(s);
+function resource(value,kind){
+  const str=String(value||'');
+  const types=kind==='image'
+    ?'image/(png|jpeg|webp|gif|svg\\+xml)'
+    :kind==='video'
+      ?'video/(mp4|webm|ogg)'
+      :'font/(woff2|woff|ttf|otf)';
+  if(new RegExp('^data:'+types+';base64,[a-z0-9+/=]+$','i').test(str))
+    return str;
+  if(/^(?:assets|media|fonts)\/[a-z0-9_./-]+$/i.test(str)
+      &&!str.includes('..'))
+    return str;
+  return kind==='font'?'':url(str);
+}
+
+const image=value=>resource(value,'image');
+const video=value=>resource(value,'video');
+const font=value=>resource(value,'font');
+
+function mediaList(project){
+  if(Array.isArray(project.media))return project.media;
+  return image(project.image)?[{
+    type:'image',
+    src:image(project.image),
+    alt:project.alt||project.title,
+    caption:''
+  }]:[];
+}
+
+function brand(){
+  return image(data.logo)
+    ?`<img class="brand-logo" src="${esc(image(data.logo))}" alt="${esc(data.brand)}">`
+    :esc(data.brand);
+}
+
+function fontStyles(){
+  const signature=data.fontRegular+'|'+data.fontBold;
+  if(signature===fontSignature)return;
+  fontSignature=signature;
+  let style=$('#nohemi-loaded');
+  if(!style){
+    style=document.createElement('style');
+    style.id='nohemi-loaded';
+    document.head.appendChild(style);
+  }
+  style.textContent=[['fontRegular',400],['fontBold',700]]
+    .map(([key,weight])=>`@font-face{
+      font-family:Nohemi;
+      src:${font(data[key])
+        ?'url("'+font(data[key])+'")'
+        :weight===400
+          ?'local("Nohemi Regular"),local("Nohemi")'
+          :'local("Nohemi Bold")'};
+      font-weight:${weight};
+      font-style:normal;
+      font-display:swap
+    }`).join('');
+}
+
+function gallery(index){
+  const project=data.projects[index];
+  const items=mediaList(project);
+  const position=Math.min(
+    slides.get(project)||0,
+    Math.max(0,items.length-1)
+  );
+  slides.set(project,position);
+  const item=items[position];
+  const display=item
+    ?item.type==='video'
+      ?`<video src="${esc(video(item.src))}" controls playsinline preload="metadata" aria-label="${esc(item.alt||project.title)}"></video>`
+      :`<img src="${esc(image(item.src))}" alt="${esc(item.alt||project.title)}" loading="lazy">`
+    :illustration(project.art,project.title);
+
+  return `
+    <div class="project-media">
+      ${display}
+      ${project.sample?'<span class="sample">Proyecto de muestra</span>':''}
+    </div>
+    ${items.length>1?`
+      <div class="gallery-nav">
+        <button type="button" data-slide="${index}" data-step="-1"
+          aria-label="Contenido anterior de ${esc(project.title)}"
+          ${position===0?'disabled':''}>Anterior</button>
+        <span role="status" aria-live="polite">${position+1} / ${items.length}</span>
+        <button type="button" data-slide="${index}" data-step="1"
+          aria-label="Contenido siguiente de ${esc(project.title)}"
+          ${position===items.length-1?'disabled':''}>Siguiente</button>
+      </div>`:''}
+    ${item?.caption?`<p class="media-caption">${esc(item.caption)}</p>`:''}`;
 }
 
 function normalize(value){
   if(!value||typeof value!=='object'||Array.isArray(value))
     throw Error('Contenido inválido.');
   const result=clone(original);
+
   for(const key of Object.keys(original)){
     if(typeof original[key]==='string'&&typeof value[key]==='string')
-      result[key]=value[key].slice(0,key==='heroImage'?6000000:3000);
+      result[key]=['heroImage','logo','fontRegular','fontBold'].includes(key)
+        ?value[key]:value[key].slice(0,3000);
   }
+
   if(Array.isArray(value.services)){
     result.services=value.services.slice(0,12).map(s=>({
       title:String(s?.title||'').slice(0,120),
       description:String(s?.description||'').slice(0,1200)
     }));
   }
+
   if(Array.isArray(value.projects)){
     result.projects=value.projects.slice(0,30).map(p=>({
       title:String(p?.title||'').slice(0,120),
       category:String(p?.category||'').slice(0,150),
       description:String(p?.description||'').slice(0,1200),
-      image:image(p?.image).slice(0,6000000),
-      alt:String(p?.alt||'').slice(0,300),
       link:url(p?.link),
       sample:p?.sample===true,
-      art:[0,1,2].includes(p?.art)?p.art:-1
+      art:[0,1,2].includes(p?.art)?p.art:-1,
+      media:mediaList(p||{}).slice(0,12).map(m=>({
+        type:m?.type==='video'?'video':'image',
+        src:m?.type==='video'?video(m?.src):image(m?.src),
+        alt:String(m?.alt||'').slice(0,300),
+        caption:String(m?.caption||'').slice(0,500)
+      })).filter(m=>m.src)
     }));
   }
+
   result.accent=color(result.accent,original.accent);
   result.background=color(result.background,original.background);
   result.foreground=color(result.foreground,original.foreground);
-  result.font=['sans','serif','mono'].includes(result.font)?result.font:'sans';
-  result.radius=['0','12','24','40'].includes(result.radius)?result.radius:'24';
+  result.font=['nohemi','sans','serif','mono'].includes(result.font)
+    ?result.font:'nohemi';
+  result.radius=['0','12','24','40'].includes(result.radius)
+    ?result.radius:'24';
   result.heroImage=image(result.heroImage);
+  result.logo=image(result.logo);
+  result.logoHeight=['32','48','64','80'].includes(result.logoHeight)
+    ?result.logoHeight:'48';
+  result.fontRegular=font(result.fontRegular);
+  result.fontBold=font(result.fontBold);
+  result.gradient1=color(result.gradient1,'#ceff00');
+  result.gradient2=color(result.gradient2,'#2f52e0');
+  result.gradient3=color(result.gradient3,'#bcf4f5');
+  result.gradientMotion=value.gradientMotion!==false;
+  result.schemaVersion=3;
   return result;
 }
 
@@ -170,7 +417,8 @@ function set(path,value){
 
 function wa(){
   const n=data.whatsapp.replace(/\D/g,'');
-  return n?'https://wa.me/'+n+'?text='+encodeURIComponent(data.whatsappMessage):'';
+  return n?'https://wa.me/'+n+'?text='+
+    encodeURIComponent(data.whatsappMessage):'';
 }
 
 function mail(){
@@ -180,7 +428,10 @@ function mail(){
 
 function button(text,orange=false){
   const href=wa()||mail();
-  return href?`<a class="button ${orange?'orange':''}" href="${esc(href)}" ${wa()?'target="_blank" rel="noopener noreferrer"':''}>${esc(text)}${arrow}</a>`:'';
+  return href?`<a class="button ${orange?'orange':''}"
+    href="${esc(href)}"
+    ${wa()?'target="_blank" rel="noopener noreferrer"':''}>
+    ${esc(text)}${arrow}</a>`:'';
 }
 
 function edit(key){
@@ -194,29 +445,40 @@ function illustration(n,title){
     '<rect width="700" height="850" fill="#ff5428"/><text x="45" y="95" font-size="23" font-weight="bold">HERE / SOCIAL CLUB</text><text x="40" y="340" font-size="130" font-weight="900" letter-spacing="-8">HACÉ</text><text x="40" y="470" font-size="130" font-weight="900" letter-spacing="-8">RUIDO.</text><path d="m80 580 85 48-85 48z" fill="#f8f4ee"/><path d="M230 555v145m45-120v95m45-140v180m45-140v110m45-80v50m45-100v150m45-125v100m45-80v60" stroke="#f8f4ee" stroke-width="12" stroke-linecap="round"/>'
   ];
   return drawings[n]
-    ?`<svg viewBox="0 0 700 850" role="img" aria-label="${esc(title)} — composición de muestra" style="font-family:Arial,sans-serif;fill:#171717">${drawings[n]}</svg>`
+    ?`<svg viewBox="0 0 700 850" role="img"
+      aria-label="${esc(title)} — composición de muestra"
+      style="font-family:Arial,sans-serif;fill:#171717">${drawings[n]}</svg>`
     :'<div style="display:grid;place-items:center;height:100%;opacity:.6">Tu proyecto acá</div>';
 }
 
 function render(){
+  fontStyles();
   const style=document.documentElement.style;
   style.setProperty('--accent',color(data.accent,original.accent));
   style.setProperty('--bg',color(data.background,original.background));
   style.setProperty('--text',color(data.foreground,original.foreground));
   style.setProperty('--radius',parseInt(data.radius,10)+'px');
   style.setProperty('--font',{
+    nohemi:'Nohemi,Arial,Helvetica,sans-serif',
     sans:'Arial,Helvetica,sans-serif',
     serif:'Georgia,serif',
     mono:'"Courier New",monospace'
   }[data.font]);
+  style.setProperty('--logo-height',parseInt(data.logoHeight,10)+'px');
+  for(let i=1;i<=3;i++){
+    style.setProperty('--gradient-'+i,
+      color(data['gradient'+i],['#ceff00','#2f52e0','#bcf4f5'][i-1]));
+  }
+
   document.title=data.brand+' — '+data.tagline;
   $('meta[name="description"]').content=data.aboutDescription;
 
   $('#site').innerHTML=`
-  <header class="hero">
+  <header class="hero ${data.gradientMotion?'':'gradient-paused'}">
     <div class="wrap">
       <nav class="nav" aria-label="Navegación principal">
-        <a class="brand" href="#">${esc(data.brand)}</a>
+        <a class="brand" href="#main"
+          aria-label="${esc(data.brand)} — Inicio">${brand()}</a>
         <div class="nav-links">
           <a href="#about">${esc(data.navAbout)}</a>
           <a href="#work">${esc(data.navProjects)}</a>
@@ -233,13 +495,16 @@ function render(){
           <a class="button" href="#work">${esc(data.heroButton)}${arrow}</a>
         </div>
       </div>
+      <button type="button" class="motion-toggle"
+        aria-pressed="${!data.gradientMotion}">
+        ${data.gradientMotion?'Pausar fondo':'Animar fondo'}
+      </button>
       <div class="hero-services">
         ${data.services.slice(0,4).map((s,i)=>`
           <div>
             <span class="number">/ ${String(i+1).padStart(2,'0')}</span>
             ${esc(s.title)}
-          </div>
-        `).join('')}
+          </div>`).join('')}
       </div>
     </div>
     ${image(data.heroImage)
@@ -254,7 +519,8 @@ function render(){
         .map(w=>`<b>${esc(w)}</b>`).join('')}
     </div>
 
-    <section class="section about" id="about" aria-labelledby="about-title">
+    <section class="section about" id="about"
+      aria-labelledby="about-title">
       <div>
         <p class="label"${edit('aboutLabel')}>${esc(data.aboutLabel)}</p>
         <h2 id="about-title"${edit('aboutTitle')}>${esc(data.aboutTitle)}</h2>
@@ -279,25 +545,18 @@ function render(){
       <div class="grid">
         ${data.projects.map((p,i)=>{
           const href=url(p.link);
-          const media=`
-            <div class="project-media">
-              ${image(p.image)
-                ?`<img src="${esc(image(p.image))}" alt="${esc(p.alt||p.title)}" loading="lazy">`
-                :illustration(p.art,p.title)}
-              ${p.sample?'<span class="sample">Proyecto de muestra</span>':''}
-            </div>`;
           return `
-            <article class="project" ${editing
-              ?`data-project="${i}" tabindex="0" role="button" aria-label="Editar ${esc(p.title)}"`
-              :''}>
-              ${href&&!editing
-                ?`<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${media}</a>`
-                :media}
-              <h3>${href&&!editing
-                ?`<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(p.title)}</a>`
+            <article class="project">
+              <div data-gallery="${i}">${gallery(i)}</div>
+              <h3>${href
+                ?`<a href="${esc(href)}" target="_blank"
+                  rel="noopener noreferrer">${esc(p.title)}</a>`
                 :esc(p.title)}</h3>
               <p>${esc(p.category)}</p>
               <p>${esc(p.description)}</p>
+              ${editing
+                ?`<button class="edit-project" type="button"
+                  data-project="${i}">Editar proyecto</button>`:''}
             </article>`;
         }).join('')}
       </div>
@@ -312,8 +571,7 @@ function render(){
             <span class="number">/ ${String(i+1).padStart(2,'0')}</span>
             <h3>${esc(s.title)}</h3>
             <p>${esc(s.description)}</p>
-          </article>
-        `).join('')}
+          </article>`).join('')}
       </div>
     </section>
 
@@ -328,25 +586,71 @@ function render(){
     </section>
 
     <footer class="footer">
-      <a class="brand" href="#">${esc(data.brand)}</a>
+      <a class="brand" href="#main"
+        aria-label="${esc(data.brand)} — Inicio">${brand()}</a>
       <span>© ${new Date().getFullYear()} ${esc(data.brand)} · ${esc(data.tagline)}</span>
       ${url(data.instagram)
-        ?`<a href="${esc(url(data.instagram))}" target="_blank" rel="noopener noreferrer">Instagram</a>`
+        ?`<a href="${esc(url(data.instagram))}" target="_blank"
+          rel="noopener noreferrer">Instagram</a>`
         :`<a href="#work">${esc(data.heroButton)}</a>`}
     </footer>
   </main>`;
 }
 
+function database(){
+  if(!databasePromise){
+    databasePromise=new Promise((resolve,reject)=>{
+      const request=indexedDB.open('here-portfolio-editor',1);
+      request.onupgradeneeded=()=>
+        request.result.createObjectStore('drafts');
+      request.onsuccess=()=>resolve(request.result);
+      request.onerror=()=>reject(request.error);
+      request.onblocked=()=>reject(Error('El almacenamiento está bloqueado.'));
+    });
+  }
+  return databasePromise;
+}
+
+async function readDraft(){
+  try{
+    const db=await database();
+    const draft=await new Promise((resolve,reject)=>{
+      const request=db.transaction('drafts')
+        .objectStore('drafts').get(storageKey);
+      request.onsuccess=()=>resolve(request.result);
+      request.onerror=()=>reject(request.error);
+    });
+    if(draft)return draft;
+  }catch{}
+  const raw=localStorage.getItem(storageKey)||localStorage.getItem(legacyKey);
+  return raw?JSON.parse(raw):null;
+}
+
+async function writeDraft(snapshot){
+  try{
+    const db=await database();
+    await new Promise((resolve,reject)=>{
+      const tx=db.transaction('drafts','readwrite');
+      tx.objectStore('drafts').put(snapshot,storageKey);
+      tx.oncomplete=resolve;
+      tx.onerror=()=>reject(tx.error);
+      tx.onabort=()=>reject(tx.error);
+    });
+  }catch{
+    localStorage.setItem(storageKey,JSON.stringify(snapshot));
+  }
+}
+
 function save(){
   clearTimeout(timer);
-  timer=setTimeout(()=>{
+  timer=setTimeout(async()=>{
     try{
-      localStorage.setItem(storageKey,JSON.stringify(data));
-      status('Borrador guardado. Descargá el HTML para publicarlo.');
+      await writeDraft(clone(data));
+      status('Borrador guardado en este navegador. Pendiente de publicar.');
     }catch{
-      status('No hay espacio para guardar. Descargá tu HTML o una copia JSON.');
+      status('No se pudo guardar el borrador. Descargá el HTML o la copia JSON para conservarlo.');
     }
-  },300);
+  },400);
 }
 
 function field(label,path,type='text',options){
@@ -361,7 +665,8 @@ function field(label,path,type='text',options){
   }else if(type==='checkbox'){
     control=`<input type="checkbox" ${attr} ${value?'checked':''}>`;
   }else{
-    control=`<input ${attr} type="${type}" value="${esc(value)}" ${type==='text'?'maxlength="3000"':''}>`;
+    control=`<input ${attr} type="${type}" value="${esc(value)}"
+      ${type==='text'?'maxlength="3000"':''}>`;
   }
   return `<label class="field">${esc(label)}${control}</label>`;
 }
@@ -370,7 +675,8 @@ function serviceFields(){
   $('#service-fields').innerHTML=data.services.map((s,i)=>
     field('Servicio '+(i+1),'services.'+i+'.title')+
     field('Descripción','services.'+i+'.description','textarea')+
-    `<button class="action danger" type="button" data-remove-service="${i}">Eliminar servicio ${i+1}</button>`
+    `<button class="action danger" type="button"
+      data-remove-service="${i}">Eliminar servicio ${i+1}</button>`
   ).join('');
 }
 
@@ -390,6 +696,7 @@ function contentFields(){
     ['Correo','email','email'],
     ['Instagram (opcional)','instagram','url']
   ];
+
   const more=[
     ['Etiqueta sobre nosotros','aboutLabel'],
     ['Etiqueta proyectos','projectsLabel'],
@@ -407,6 +714,7 @@ function contentFields(){
     ['Botón sobre nosotros','aboutButton'],
     ['Botón WhatsApp','contactButton']
   ];
+
   $('#texts').innerHTML=
     '<h3>Tu estudio y contacto</h3>'+
     fields.map(f=>field(...f)).join('')+
@@ -417,33 +725,57 @@ function contentFields(){
   serviceFields();
 
   $('#design').innerHTML=
+    '<h3>Tu logo</h3>'+
+    '<label class="field">Cargar logo<input type="file" data-upload="logo" accept="image/png,image/jpeg,image/webp,image/svg+xml"><small>PNG transparente o SVG recomendado. Máximo 4 MB.</small></label>'+
+    field('Altura del logo','logoHeight','select',[
+      ['32','Pequeño'],['48','Mediano'],
+      ['64','Grande'],['80','Muy grande']
+    ])+
+    '<button class="action" type="button" id="clear-logo">Usar nombre del estudio</button>'+
+    '<h3>Portada en movimiento</h3>'+
+    '<div class="hero-gradient-fields">'+
+    [1,2,3].map(i=>field('Color '+i,'gradient'+i,'color')).join('')+
+    '</div>'+
+    field('Animar degradado','gradientMotion','checkbox')+
+    '<h3>Nohemi Regular y Bold</h3>'+
+    '<p class="note">Cargá tus archivos originales con licencia para uso web. Se incluyen en el HTML exportado. Mientras tanto se usa una fuente de respaldo.</p>'+
+    ['Regular','Bold'].map(weight=>`
+      <label class="field">Nohemi ${weight}
+        <input type="file" data-font="font${weight}"
+          accept=".woff2,.woff,.ttf,.otf">
+        <small>WOFF2 recomendado; máximo 2 MB.</small>
+      </label>`).join('')+
+    '<p class="upload-help" id="font-status">'+
+    (data.fontRegular?'Regular cargada. ':'Regular pendiente. ')+
+    (data.fontBold?'Bold cargada.':'Bold pendiente.')+'</p>'+
+    '<button class="action" type="button" id="clear-fonts">Quitar fuentes cargadas</button>'+
     '<h3>Colores y estilo</h3>'+
     field('Color protagonista','accent','color')+
     field('Fondo','background','color')+
     field('Texto','foreground','color')+
     field('Tipografía','font','select',[
-      ['sans','Moderna · Arial'],
-      ['serif','Editorial · Georgia'],
-      ['mono','Técnica · Monospace']
+      ['nohemi','Nohemi · Regular y Bold'],
+      ['sans','Arial'],['serif','Georgia'],['mono','Monospace']
     ])+
     field('Esquinas de imágenes','radius','select',[
       ['0','Rectas'],['12','Suaves'],
       ['24','Redondeadas'],['40','Muy redondeadas']
     ])+
-    '<h3>Imagen de portada</h3>'+
-    '<p class="note">Usá una imagen propia o conservá la composición gráfica original.</p>'+
-    '<label class="field">Cargar imagen<input type="file" data-upload="heroImage" accept="image/jpeg,image/png,image/webp"><small>JPG, PNG o WebP. Máximo 4 MB; ideal menos de 1 MB.</small></label>'+
-    '<button type="button" class="action" id="clear-hero">Usar composición original</button>';
+    '<h3>Imagen sobre la portada (opcional)</h3>'+
+    '<label class="field">Cargar imagen<input type="file" data-upload="heroImage" accept="image/jpeg,image/png,image/webp"><small>Máximo 4 MB.</small></label>'+
+    '<button type="button" class="action" id="clear-hero">Dejar solo el degradado</button>';
 }
 
 function projectFields(){
   selected=Math.max(0,Math.min(selected,data.projects.length-1));
+
   let html=
     '<h3>Galería de proyectos</h3>'+
     '<label class="field">Elegí un proyecto<select id="choose-project">'+
     data.projects.map((p,i)=>`
-      <option value="${i}" ${i===selected?'selected':''}>${i+1}. ${esc(p.title||'Sin título')}</option>
-    `).join('')+
+      <option value="${i}" ${i===selected?'selected':''}>
+        ${i+1}. ${esc(p.title||'Sin título')}
+      </option>`).join('')+
     '</select></label>'+
     '<button type="button" class="action" id="add-project">+ Agregar proyecto</button>';
 
@@ -453,14 +785,47 @@ function projectFields(){
       field('Nombre',path+'title')+
       field('Categoría',path+'category')+
       field('Descripción',path+'description','textarea')+
-      `<label class="field">Cargar imagen<input type="file" data-upload="${path}image" accept="image/jpeg,image/png,image/webp"><small>JPG, PNG o WebP. Máximo 4 MB.</small></label>`+
-      field('Descripción de la imagen (accesibilidad)',path+'alt')+
-      field('Enlace a Behance u otro sitio (opcional)',path+'link','url')+
+      field('Enlace del proyecto (opcional)',path+'link','url')+
       field('Mostrar como proyecto de muestra',path+'sample','checkbox')+
-      '<div class="move-buttons"><button class="action" type="button" id="up-project">Subir</button><button class="action" type="button" id="down-project">Bajar</button></div>'+
+      '<h3>Imágenes y videos</h3>'+
+      '<label class="field">Agregar uno o varios archivos<input type="file" id="media-upload" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml,video/mp4,video/webm,video/ogg"><small>Hasta 12 archivos por proyecto. Imágenes: 4 MB; videos: 12 MB. MP4 con H.264 es el más compatible.</small></label>'+
+      '<p class="upload-help">Para videos grandes, subí el archivo a GitHub y usá su ruta abajo. El HTML completo debe pesar menos de 24 MB.</p>'+
+      '<label class="field">Tipo de archivo<select id="media-kind"><option value="image">Imagen</option><option value="video">Video</option></select></label>'+
+      '<label class="field">Ruta o enlace directo<input id="media-url" placeholder="assets/video.mp4 o https://..."></label>'+
+      '<button class="action" type="button" id="add-media-url">Agregar por ruta o enlace</button>'+
+      '<div id="media-list"></div>'+
+      '<div class="move-buttons"><button class="action" type="button" id="up-project">Subir proyecto</button><button class="action" type="button" id="down-project">Bajar proyecto</button></div>'+
       '<button class="action danger" type="button" id="delete-project">Eliminar proyecto</button>';
   }
+
   $('#projects').innerHTML=html;
+  if(data.projects.length)mediaFields();
+}
+
+function mediaFields(){
+  const project=data.projects[selected];
+  project.media=mediaList(project);
+  const base='projects.'+selected+'.media.';
+
+  $('#media-list').innerHTML=project.media.map((m,i)=>`
+    <div class="media-item">
+      <strong>${i+1}. ${m.type==='video'?'Video':'Imagen'}</strong>
+      ${m.type==='video'
+        ?`<video src="${esc(video(m.src))}" controls playsinline preload="none"></video>`
+        :`<img src="${esc(image(m.src))}" alt="${esc(m.alt)}">`}
+      ${field('Descripción accesible',base+i+'.alt')}
+      ${field('Texto debajo del archivo (opcional)',base+i+'.caption')}
+      <div class="move-buttons">
+        <button class="action" type="button" data-media-move="${i}"
+          data-direction="-1" ${i===0?'disabled':''}>Subir</button>
+        <button class="action" type="button" data-media-move="${i}"
+          data-direction="1"
+          ${i===project.media.length-1?'disabled':''}>Bajar</button>
+      </div>
+      <button class="action danger" type="button"
+        data-media-remove="${i}">Quitar archivo</button>
+    </div>`).join('')||
+    '<p class="note">Todavía no hay archivos propios en este proyecto.</p>';
 }
 
 function tab(name){
@@ -489,45 +854,189 @@ function download(text,name,type){
   setTimeout(()=>URL.revokeObjectURL(href),30000);
 }
 
+const readFile=file=>new Promise((resolve,reject)=>{
+  const reader=new FileReader();
+  reader.onload=()=>resolve(reader.result);
+  reader.onerror=()=>reject(Error('No se pudo leer '+file.name));
+  reader.readAsDataURL(file);
+});
+
+async function validateImage(src){
+  await new Promise((resolve,reject)=>{
+    const img=new Image();
+    img.onload=resolve;
+    img.onerror=()=>reject(Error('Imagen inválida.'));
+    img.src=src;
+  });
+}
+
+async function validateVideo(src){
+  await new Promise((resolve,reject)=>{
+    const element=document.createElement('video');
+    const timeout=setTimeout(()=>
+      finish(Error('No se pudo abrir el video. Probá MP4 H.264.')),10000);
+
+    function finish(error){
+      clearTimeout(timeout);
+      element.onloadedmetadata=null;
+      element.onerror=null;
+      element.removeAttribute('src');
+      element.load();
+      error?reject(error):resolve();
+    }
+
+    element.preload='metadata';
+    element.onloadedmetadata=()=>finish();
+    element.onerror=()=>
+      finish(Error('Video no compatible. Usá MP4 H.264 o WebM.'));
+    element.src=src;
+  });
+}
+
 async function upload(file,path){
   if(!file)return;
-  if(!['image/jpeg','image/png','image/webp'].includes(file.type)
-      ||file.size>4*1024*1024){
-    status('Elegí JPG, PNG o WebP de hasta 4 MB.');
-    return;
-  }
   try{
-    const target=path.startsWith('projects.')
-      ?data.projects[Number(path.split('.')[1])]:data;
-    const key=path.startsWith('projects.')?'image':'heroImage';
-    const content=await new Promise((resolve,reject)=>{
-      const reader=new FileReader();
-      reader.onload=()=>resolve(reader.result);
-      reader.onerror=reject;
-      reader.readAsDataURL(file);
-    });
-    await new Promise((resolve,reject)=>{
-      const img=new Image();
-      img.onload=resolve;
-      img.onerror=reject;
-      img.src=content;
-    });
-    target[key]=content;
+    if(!['image/jpeg','image/png','image/webp','image/svg+xml']
+        .includes(file.type)||file.size>4*1024*1024)
+      throw Error('Elegí una imagen de hasta 4 MB.');
+    const src=await readFile(file);
+    await validateImage(src);
+    data[path]=src;
     render();
     save();
+  }catch(error){status(error.message);}
+}
+
+async function uploadFont(file,key){
+  if(!file)return;
+  try{
+    const ext=file.name.split('.').pop().toLowerCase();
+    if(!['woff2','woff','ttf','otf'].includes(ext)
+        ||file.size>2*1024*1024)
+      throw Error('Elegí WOFF2, WOFF, TTF u OTF de hasta 2 MB.');
+    const raw=await readFile(file);
+    const src='data:font/'+ext+';base64,'+raw.split(',')[1];
+    const test=new FontFace('HereFontValidation','url("'+src+'")');
+    await test.load();
+    data[key]=src;
+    data.font='nohemi';
+    render();
+    contentFields();
+    save();
   }catch{
-    status('No se pudo leer la imagen. Probá otro archivo.');
+    status('No se pudo cargar la fuente. Elegí un archivo válido de hasta 2 MB.');
   }
 }
+
+async function uploadMedia(files,project){
+  project.media=mediaList(project);
+  let added=0;
+  const failures=[];
+
+  for(const file of files){
+    try{
+      if(project.media.length>=12)
+        throw Error('El proyecto admite hasta 12 archivos.');
+
+      const type=file.type.startsWith('video/')?'video':'image';
+      const allowed=type==='video'
+        ?['video/mp4','video/webm','video/ogg']
+        :['image/jpeg','image/png','image/webp','image/gif','image/svg+xml'];
+
+      if(!allowed.includes(file.type)
+          ||file.size>(type==='video'?12:4)*1024*1024)
+        throw Error('Formato o tamaño no admitido: '+file.name);
+
+      const src=await readFile(file);
+      if(type==='image')await validateImage(src);
+      else await validateVideo(src);
+
+      project.media.push({
+        type,src,
+        alt:file.name.replace(/\.[^.]+$/,''),
+        caption:''
+      });
+      added++;
+    }catch(error){failures.push(error.message);}
+  }
+
+  render();
+  if(data.projects[selected]===project)mediaFields();
+  const saved=added?await persistNow():true;
+  status(
+    (added?added+' archivo(s) agregado(s). ':'')+
+    (failures.join(' ')||'')+
+    (saved
+      ?' Descargá el HTML para publicar.'
+      :' No se pudo guardar el borrador; descargá el HTML para conservarlo.')
+  );
+}
+
+async function persistNow(){
+  clearTimeout(timer);
+  try{
+    await writeDraft(clone(data));
+    return true;
+  }catch{
+    status('No se pudo guardar el borrador. Descargá tu HTML o una copia JSON.');
+    return false;
+  }
+}
+
+data=normalize(data);
+
+$('#site').addEventListener('play',event=>{
+  if(event.target.tagName==='VIDEO'){
+    document.querySelectorAll('video').forEach(v=>{
+      if(v!==event.target)v.pause();
+    });
+  }
+},true);
+
+$('#site').addEventListener('click',event=>{
+  const control=event.target.closest('[data-slide]');
+  if(control){
+    const i=Number(control.dataset.slide);
+    const project=data.projects[i];
+    const items=mediaList(project);
+    const next=(slides.get(project)||0)+Number(control.dataset.step);
+    if(next>=0&&next<items.length){
+      slides.set(project,next);
+      $('[data-gallery="'+i+'"]').innerHTML=gallery(i);
+      const replacement=$(
+        '[data-gallery="'+i+'"] [data-step="'+control.dataset.step+'"]'
+      );
+      if(replacement&&!replacement.disabled)replacement.focus();
+      else{
+        const other=$('[data-gallery="'+i+'"] button:not(:disabled)');
+        if(other)other.focus();
+      }
+    }
+  }
+
+  if(event.target.closest('.motion-toggle')){
+    data.gradientMotion=!data.gradientMotion;
+    $('.hero').classList.toggle('gradient-paused',!data.gradientMotion);
+    const toggle=$('.motion-toggle');
+    toggle.textContent=data.gradientMotion?'Pausar fondo':'Animar fondo';
+    toggle.setAttribute('aria-pressed',String(!data.gradientMotion));
+    if(editing){
+      const input=$('[data-field="gradientMotion"]');
+      if(input)input.checked=data.gradientMotion;
+      save();
+    }
+  }
+});
 
 render();
 if(!editing)return;
 document.body.classList.add('editing');
 
 try{
-  const draft=localStorage.getItem(storageKey);
+  const draft=await readDraft();
   if(draft){
-    data=normalize(JSON.parse(draft));
+    data=normalize(draft);
+    if(!draft.schemaVersion&&data.font==='sans')data.font='nohemi';
     status('Borrador recuperado. Todavía no está publicado.');
   }
 }catch{
@@ -576,28 +1085,95 @@ $('.panes').addEventListener('change',async e=>{
     selected=Number(e.target.value);
     projectFields();
   }
-  if(e.target.dataset.upload)
-    upload(e.target.files[0],e.target.dataset.upload);
+
+  if(e.target.dataset.upload){
+    await upload(e.target.files[0],e.target.dataset.upload);
+    e.target.value='';
+  }
+
+  if(e.target.dataset.font){
+    await uploadFont(e.target.files[0],e.target.dataset.font);
+    e.target.value='';
+  }
+
+  if(e.target.id==='media-upload'){
+    const project=data.projects[selected];
+    await uploadMedia([...e.target.files],project);
+    e.target.value='';
+  }
 
   if(e.target.id==='restore'&&e.target.files[0]){
     try{
       const file=e.target.files[0];
-      if(file.size>40*1024*1024)throw Error('La copia supera 40 MB.');
+      if(file.size>64*1024*1024)throw Error('La copia supera 64 MB.');
       data=normalize(JSON.parse(await file.text()));
       selected=0;
       render();
       contentFields();
       projectFields();
       save();
-    }catch(error){
-      status('No se pudo restaurar: '+error.message);
-    }
+    }catch(error){status('No se pudo restaurar: '+error.message);}
     e.target.value='';
   }
 });
 
 $('.panes').addEventListener('click',e=>{
   const id=e.target.id;
+
+  if(id==='clear-logo'){
+    data.logo='';
+    render();
+    save();
+  }
+
+  if(id==='clear-fonts'){
+    data.fontRegular='';
+    data.fontBold='';
+    render();
+    contentFields();
+    save();
+  }
+
+  if(id==='add-media-url'){
+    const project=data.projects[selected];
+    const type=$('#media-kind').value;
+    const src=resource($('#media-url').value.trim(),type);
+    project.media=mediaList(project);
+    if(!src){
+      status('Usá un enlace HTTP(S) directo o una ruta como assets/video.mp4.');
+      return;
+    }
+    if(project.media.length>=12){
+      status('Máximo 12 archivos por proyecto.');
+      return;
+    }
+    project.media.push({type,src,alt:project.title,caption:''});
+    $('#media-url').value='';
+    mediaFields();
+    render();
+    save();
+  }
+
+  if(e.target.dataset.mediaMove!==undefined){
+    const items=data.projects[selected].media;
+    const i=Number(e.target.dataset.mediaMove);
+    const next=i+Number(e.target.dataset.direction);
+    if(next>=0&&next<items.length){
+      [items[i],items[next]]=[items[next],items[i]];
+      mediaFields();
+      render();
+      save();
+    }
+  }
+
+  if(e.target.dataset.mediaRemove!==undefined
+      &&confirm('¿Quitar este archivo del proyecto?')){
+    data.projects[selected].media.splice(
+      Number(e.target.dataset.mediaRemove),1);
+    mediaFields();
+    render();
+    save();
+  }
 
   if(id==='clear-hero'){
     data.heroImage='';
@@ -636,7 +1212,7 @@ $('.panes').addEventListener('click',e=>{
       title:'Nuevo proyecto',
       category:'Identidad visual',
       description:'Contá el objetivo y tu aporte.',
-      image:'',alt:'',link:'',sample:false,art:-1
+      media:[],link:'',sample:false,art:-1
     });
     selected=data.projects.length-1;
     projectFields();
@@ -707,25 +1283,50 @@ $('#site').addEventListener('keydown',e=>{
   }
 });
 
+function exportHTML(){
+  const json=JSON.stringify(normalize(data),null,2)
+    .replace(/</g,'\\u003c');
+  const block=/<script id="site-data" type="application\/json">[\s\S]*?<\/script>/;
+  if(!block.test(template))throw Error('No se encontró el contenido.');
+  const html=template.replace(block,()=>
+    '<script id="site-data" type="application/json">\n'+
+    json+'\n</'+'script>');
+  if(new Blob([html]).size>MAX_HTML)
+    throw Error('El HTML supera 24 MB. Usá rutas a videos subidos en GitHub para reducirlo.');
+  return html;
+}
+
+$('#publish').insertAdjacentHTML('afterbegin',
+  '<button type="button" class="action primary" id="copy-html">Copiar HTML actualizado</button>'+
+  '<label class="field" id="manual-copy" hidden>Copiá este código completo<textarea id="export-output" readonly style="min-height:180px"></textarea></label>'
+);
+
+$('#copy-html').addEventListener('click',async()=>{
+  try{
+    const html=exportHTML();
+    await persistNow();
+    try{
+      await navigator.clipboard.writeText(html);
+      status('Código copiado. Reemplazá index.html en GitHub y guardá el commit.');
+    }catch{
+      $('#manual-copy').hidden=false;
+      $('#export-output').value=html;
+      $('#export-output').focus();
+      $('#export-output').select();
+      status('Seleccioná y copiá el código del recuadro; luego pegalo en index.html de GitHub.');
+    }
+  }catch(error){status(error.message);}
+});
+
 $('#download').addEventListener('click',()=>{
   try{
     clearTimeout(timer);
-    const json=JSON.stringify(normalize(data),null,2)
-      .replace(/</g,'\\u003c');
-    const block=/<script id="site-data" type="application\/json">[\s\S]*?<\/script>/;
-    if(!block.test(template))throw Error('No se encontró el contenido.');
-    const html=template.replace(block,()=>
-      '<script id="site-data" type="application/json">\n'+
-      json+'\n</'+'script>');
-    download(html,'index.html','text/html;charset=utf-8');
-    try{
-      localStorage.setItem(storageKey,JSON.stringify(data));
-    }catch{}
+    download(exportHTML(),'index.html','text/html;charset=utf-8');
+    persistNow();
     status('HTML descargado. Subilo a GitHub para publicar.');
-  }catch(error){
-    status(error.message);
-  }
+  }catch(error){status(error.message);}
 });
+
 })();
 </script>
 </body>
